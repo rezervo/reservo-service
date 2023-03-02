@@ -1,0 +1,14 @@
+services:
+
+  database:
+    image: postgres:15.2
+    container_name: reservo-database
+    hostname: reservo-database
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=reservo
+      - POSTGRES_USER=reservo
+      - POSTGRES_PASSWORD=reservo
+      - PGPORT=5432
+      - TZ=Europe/Warsaw
