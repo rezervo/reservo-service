@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Builder
-public class CreateCompanyRequest {
+public class CompanyRegistrationRequest {
 
   @NotBlank
   private final String firstName;

@@ -3,7 +3,7 @@ package pl.reservo.reservoservice.api;
 import lombok.Builder;
 
 @Builder
-public class CreateCompanyResponse {
+public class UserRegistrationResponse {
 
   private final Integer id;
 }
