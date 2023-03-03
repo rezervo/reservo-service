@@ -3,3 +3,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/reservo
     username: reservo
     password: reservo
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
