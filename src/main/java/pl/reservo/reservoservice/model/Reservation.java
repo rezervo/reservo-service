@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import pl.reservo.reservoservice.constants.ReservationStatus;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 
 @Entity
@@ -28,9 +27,9 @@ public class Reservation {
     private boolean isAvailable;
     @Enumerated(EnumType.STRING)
     private ReservationStatus reservationStatus;
-   @ManyToOne
-   @JoinColumn(name = "company_id")
-   private Company company;
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;

@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import pl.reservo.reservoservice.constants.Profession;
 
-import java.util.List;
-
 
 @Entity
 @Data
