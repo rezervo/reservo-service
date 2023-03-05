@@ -27,6 +27,4 @@ public class Company {
     private Address address;
     @OneToOne(cascade = CascadeType.ALL)
     private ApplicationUser user;
-    @OneToMany(mappedBy = "company", cascade = {CascadeType.ALL}, orphanRemoval = true)
-    private List<Reservation> reservations;
 }

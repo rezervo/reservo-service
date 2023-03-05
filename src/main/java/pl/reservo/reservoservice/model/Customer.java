@@ -24,7 +24,5 @@ public class Customer {
     private String phoneNumber;
     @OneToOne(cascade = CascadeType.ALL)
     private ApplicationUser user;
-    @OneToMany(mappedBy = "customer", cascade = {CascadeType.ALL}, orphanRemoval = true)
-    private List<Reservation> reservations;
 
 }
