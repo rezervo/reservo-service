@@ -5,4 +5,12 @@ spring:
     password: reservo
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
+#security
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
+
+logging:
+  level:
+    root: info

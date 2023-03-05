@@ -1,28 +1,23 @@
 package pl.reservo.reservoservice.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import pl.reservo.reservoservice.constants.Profession;
 
 
+
 @Entity
+@DiscriminatorValue("company")
 @Data
 @Builder
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Company {
+public class Company extends ApplicationUser {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String name;
     private String phoneNumber;
     private Profession profession;
     @OneToOne
     private Address address;
-    @OneToOne(cascade = CascadeType.ALL)
-    private ApplicationUser user;
 }
