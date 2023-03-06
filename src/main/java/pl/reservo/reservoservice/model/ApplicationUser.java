@@ -1,14 +1,22 @@
 package pl.reservo.reservoservice.model;
 
-import javax.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 import pl.reservo.reservoservice.constants.UserRole;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -18,6 +26,7 @@ import java.util.UUID;
 @DiscriminatorColumn(name = "user_type")
 @Getter
 @Setter
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class ApplicationUser  {

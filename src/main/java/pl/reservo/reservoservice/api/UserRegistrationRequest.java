@@ -1,22 +1,13 @@
 package pl.reservo.reservoservice.api;
 
-import lombok.Builder;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-@Builder
-public class UserRegistrationRequest {
+public record UserRegistrationRequest(
+    @NotBlank String firstName,
+    @NotBlank String lastName,
+    @NotBlank String phoneNumber,
+    @Email @NotBlank String email,
+    @NotBlank String password) {
 
-  @NotBlank
-  private final String firstName;
-  @NotBlank
-  private final String lastName;
-  @NotBlank
-  private final String phoneNumber;
-  @Email
-  @NotBlank
-  private final String email;
-  @NotBlank
-  private final String password;
 }

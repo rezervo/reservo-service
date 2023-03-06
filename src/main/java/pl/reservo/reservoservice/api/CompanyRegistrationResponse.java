@@ -1,9 +1,7 @@
 package pl.reservo.reservoservice.api;
 
-import lombok.Builder;
+import java.util.UUID;
 
-@Builder
-public class CompanyRegistrationResponse {
+public record CompanyRegistrationResponse(UUID id) {
 
-  private final Integer id;
 }

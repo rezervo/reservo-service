@@ -1,18 +1,11 @@
 package pl.reservo.reservoservice.api;
 
-import lombok.Builder;
-
 import javax.validation.constraints.NotBlank;
 
-@Builder
-public class Address {
+public record Address(
+    @NotBlank String street,
+    @NotBlank String houseNumber,
+    @NotBlank String city,
+    @NotBlank String zipCode) {
 
-  @NotBlank
-  private final String street;
-  @NotBlank
-  private final String houseNumber;
-  @NotBlank
-  private final String city;
-  @NotBlank
-  private final String zipCode;
 }

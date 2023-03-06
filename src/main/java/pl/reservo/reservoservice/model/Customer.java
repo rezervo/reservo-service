@@ -3,13 +3,14 @@ package pl.reservo.reservoservice.model;
 import javax.persistence.*;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Objects;
 
 
 @Entity
 @DiscriminatorValue("candidate")
-@Builder
+@SuperBuilder
 @Getter
 @Setter
 @AllArgsConstructor
