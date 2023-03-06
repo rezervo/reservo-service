@@ -1,6 +1,7 @@
 package pl.reservo.reservoservice.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.*;
 import pl.reservo.reservoservice.constants.ReservationStatus;
 

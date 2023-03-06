@@ -1,13 +1,16 @@
 package pl.reservo.reservoservice.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 import pl.reservo.reservoservice.constants.UserRole;
 
 import java.util.Objects;
+import java.util.UUID;
 
 
 @Entity
@@ -21,8 +24,12 @@ public abstract class ApplicationUser  {
 //TODO implement UserDetails from Spring Security
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    private UUID id;
     @Column(unique = true)
     private String email;
     private String password;
