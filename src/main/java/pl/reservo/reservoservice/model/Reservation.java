@@ -1,18 +1,16 @@
 package pl.reservo.reservoservice.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import pl.reservo.reservoservice.constants.ReservationStatus;
 
 import java.time.LocalDateTime;
 
 
 @Entity
-@Data
 @Builder
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Reservation {

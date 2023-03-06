@@ -1,26 +1,35 @@
 package pl.reservo.reservoservice.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.Objects;
 
 
 @Entity
-@Data
+@DiscriminatorValue("candidate")
 @Builder
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer {
+public class Customer extends ApplicationUser {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    @OneToOne(cascade = CascadeType.ALL)
-    private ApplicationUser user;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(phoneNumber, customer.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), firstName, lastName, phoneNumber);
+    }
 }
