@@ -1,0 +1,15 @@
+{
+  "firstName": "Jan",
+  "lastName": "Kowalski",
+  "phoneNumber": "123456789",
+  "email": "jan@kowalski.com",
+  "companyName": "Fryzjer Janek",
+  "password": "pass",
+  "category": "BARBER",
+  "address": {
+    "street": "ul. Nowa",
+    "houseNumber": "15",
+    "city": "Gdynia",
+    "zipCode": "81-198"
+  }
+}
