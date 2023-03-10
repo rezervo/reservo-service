@@ -29,3 +29,14 @@ jobs:
           file: ./docker/Dockerfile
           push: true
           tags: norsu1212/reservo:latest
+
+      - name: Deploy to vps
+        uses: appleboy/ssh-actions@master
+        with:
+          host: ${{ secrets.SERVER }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            cd rezervo
+            ls -lah
+            echo "connected and works"
