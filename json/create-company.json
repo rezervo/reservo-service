@@ -5,7 +5,7 @@
   "email": "jan@kowalski.com",
   "companyName": "Fryzjer Janek",
   "password": "pass",
-  "category": "BARBER",
+  "profession": "BARBER",
   "address": {
     "street": "ul. Nowa",
     "houseNumber": "15",

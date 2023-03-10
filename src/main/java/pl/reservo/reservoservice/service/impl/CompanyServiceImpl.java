@@ -23,7 +23,7 @@ public class CompanyServiceImpl implements CompanyService {
     Company company = Company.builder()
         .name(request.companyName())
         .phoneNumber(request.phoneNumber())
-        .profession(Profession.valueOf(request.category().name()))
+        .profession(request.profession())
         .email(request.email())
         .password(request.password())
         .address(Address.builder()
