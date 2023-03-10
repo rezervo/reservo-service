@@ -38,6 +38,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 10193
           script: |
-            cd rezervo
+            scp -P 10193 docker/docker-compose.yml ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/reservo/docker-compose.yaml
             ls -lah
-            echo "connected and works"
+            cd /reservo/${{ secrets.VPS_USERNAME }}
+            docker-compose up -d --no-deps --build
