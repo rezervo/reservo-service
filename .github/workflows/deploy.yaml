@@ -15,7 +15,7 @@ jobs:
           distribution: 'temurin'
           
       - name: Build with Maven
-        run: mvn clean package -X -Dmaven.test.skip=true
+        run: mvn clean package -q -Dmaven.test.skip=true
 
       - name: Login to Docker Hub
         uses: docker/login-action@v1
@@ -50,4 +50,6 @@ jobs:
           port: 10193
           script: |
             cd reservo/docker
-            docker-compose up -d --no-deps --build
+            docker-compose down
+            docker-compose rm
+            docker-compose up -d --no-deps --build --no-cache
