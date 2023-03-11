@@ -14,7 +14,7 @@ public record CompanyRegistrationRequest(
     @NotNull Profession profession,
     @NotBlank String phoneNumber,
     @Email @NotBlank String email,
-    @NotNull @Valid Address address,
+    @NotNull @Valid AddressResponse address,
     @NotBlank String password) {
 
 }
