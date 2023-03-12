@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   database:
     image: postgres:15.2
     container_name: reservo-database
@@ -13,3 +12,22 @@ services:
       - POSTGRES_PASSWORD=reservo
       - PGPORT=5432
       - TZ=Europe/Warsaw
+    networks:
+      - reservo-network
+    restart: always
+  app:
+    image: norsu1212/reservo:latest
+    container_name: reservo-service
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/reservo
+    ports:
+      - '20193:8080'
+    networks:
+      - reservo-network
+    depends_on:
+      - database
+    restart: always
+
+networks:
+  reservo-network:
+    driver: bridge
