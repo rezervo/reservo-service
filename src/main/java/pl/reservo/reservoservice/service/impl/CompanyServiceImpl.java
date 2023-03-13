@@ -51,6 +51,7 @@ public class CompanyServiceImpl implements CompanyService {
                 .findAny()
                 .orElse(null);
         return companyRepository.findAllByProfession(professionToFind).stream()
+                .filter(company -> company.getProfession().equals(professionToFind))
                 .map(company -> new CompanySearchResponse(
                         company.getId(),
                         company.getName(),
@@ -70,6 +71,7 @@ public class CompanyServiceImpl implements CompanyService {
                 .findAny()
                 .orElse(null);
         return companyRepository.findAllByAddressCityAndProfession(city, professionToFind).stream()
+                .filter(company -> company.getProfession().equals(professionToFind) && company.getAddress().getCity().equalsIgnoreCase(city))
                 .map(company -> new CompanySearchResponse(
                         company.getId(),
                         company.getName(),

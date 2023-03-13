@@ -1,6 +1,7 @@
 package pl.reservo.reservoservice.endpoint;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.reservo.reservoservice.api.CompanyRegistrationRequest;
@@ -18,6 +19,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/companies")
 @RequiredArgsConstructor
+@Slf4j
 class CompanyController {
 
     private final CompanyService companyService;
@@ -31,7 +33,7 @@ class CompanyController {
     @GetMapping
     public Set<CompanySearchResponse> findByProfession(@RequestParam String service,
                                                        @RequestParam(required = false) String city) {
-
+        log.debug("Processing findByProfession request. Params service: {}, city: {}", service, city);
         return city == null ?
                 companyService.findAllByProfession(service) :
                 companyService.findAllByCityAndProfession(city, service);
