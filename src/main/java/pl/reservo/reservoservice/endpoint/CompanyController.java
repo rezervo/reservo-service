@@ -20,6 +20,7 @@ import java.util.Set;
 @RequestMapping("/companies")
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin
 class CompanyController {
 
     private final CompanyService companyService;

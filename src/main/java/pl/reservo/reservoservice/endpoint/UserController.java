@@ -2,11 +2,7 @@ package pl.reservo.reservoservice.endpoint;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.reservo.reservoservice.api.UserRegistrationRequest;
 import pl.reservo.reservoservice.api.UserRegistrationResponse;
 import pl.reservo.reservoservice.service.UserService;
@@ -16,6 +12,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
+@CrossOrigin
 class UserController {
 
   private final UserService userService;
